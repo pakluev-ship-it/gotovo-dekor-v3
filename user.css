@@ -1,1 +1,305 @@
-/* ADD CUSTOM STYLES HERE */
+--- public/user.css (原始)
+/* === GOTIVO DECOR BRAND COLORS === */
+/* Глобальное ТЗ: gotovo-dekor-v3 | Дизайн-система */
+
+/* Base links & accent */
+a, .color-base { color: #2E5A52; }
+a:hover { color: #C68446; }
+
+/* Background utilities */
+.bg-theme        { background-color: #2E5A52 !important; }
+.bg-accent       { background-color: #C6A87F !important; }
+.bg-accent-dark  { background-color: #C68446 !important; }
+.bg-light-custom { background-color: #D1CCC8 !important; }
+
+/* Text utilities */
+.text-main    { color: #3A3D42 !important; }
+.text-on-dark { color: #FFFFFF !important; }
+
+/* === Buttons override (Bootstrap 4 compatible) === */
+.btn-primary {
+    background-color: #2E5A52;
+    border-color: #2E5A52;
+    color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #C6A87F;
+    border-color: #C6A87F;
+    color: #3A3D42;
+}
+
+.btn-outline-primary {
+    color: #2E5A52;
+    border-color: #2E5A52;
+    background-color: transparent;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    background-color: #2E5A52;
+    color: #fff;
+}
+
+/* Button on dark backgrounds */
+.btn-light {
+    background-color: #fff;
+    border-color: #fff;
+    color: #3A3D42;
+}
+.btn-light:hover,
+.btn-light:focus {
+    background-color: #C6A87F;
+    border-color: #C6A87F;
+    color: #3A3D42;
+}
+
+/* ============================================ */
+/* GOTIVO DECOR — Дизайн-система               */
+/* CSS-переменные брендовых цветов              */
+/* ============================================ */
+
+:root {
+  /* === Брендовые цвета === */
+  --gd-primary:        #2E5A52;   /* Theme / Primary — кнопки, ссылки, ховеры */
+  --gd-primary-hover:  rgba(46, 90, 82, 0.9);
+  --gd-accent:         #C6A87F;   /* Акцент основной — разделители, рамки, плашки */
+  --gd-accent-dark:    #C68446;   /* Акцент второстепенный — цены, бейджи, иконки */
+  --gd-accent-ring:    rgba(198, 132, 70, 0.25);
+  --gd-primary-ring:   rgba(46, 90, 82, 0.25);
+  --gd-light:          #D1CCC8;   /* Фон вторичный — чередование секций */
+  --gd-dark:           #3A3D42;   /* Текст основной */
+  --gd-white:          #FFFFFF;   /* Фон / инверт-текст */
+
+  /* === Отступы (единая система) === */
+  --gd-space-xs:  4px;
+  --gd-space-sm:  8px;
+  --gd-space-md:  16px;
+  --gd-space-lg:  24px;
+  --gd-space-xl:  32px;
+  --gd-space-2xl: 48px;
+  --gd-space-3xl: 72px;
+
+  /* === Радиусы === */
+  --gd-radius-sm: 3px;
+  --gd-radius-md: 6px;
+  --gd-radius-lg: 8px;
+  --gd-radius-xl: 12px;
+  --gd-radius-full: 50%;
+
+  /* === Переходы === */
+  --gd-transition-fast:   0.15s ease-in-out;
+  --gd-transition-normal: 0.25s ease-in-out;
+  --gd-transition-slow:   0.35s ease-in-out;
+
+  /* === Типографика === */
+  --gd-font-family: 'PT Sans', sans-serif;
+  --gd-line-height: 1.6;
+}
+
+/* ============================================ */
+/* Утилиты фонов (перезаписывают BS4 утилиты)   */
+/* ============================================ */
+
+.bg-gd-primary { background-color: var(--gd-primary) !important; }
+.bg-gd-accent  { background-color: var(--gd-accent) !important; }
+.bg-gd-accent-dark { background-color: var(--gd-accent-dark) !important; }
+.bg-gd-light   { background-color: var(--gd-light) !important; }
+.bg-gd-dark    { background-color: var(--gd-dark) !important; }
+.bg-gd-white   { background-color: var(--gd-white) !important; }
+
+/* ============================================ */
+/* Утилиты текста (перезаписывают BS4 утилиты)  */
+/* ============================================ */
+
+.text-gd-primary { color: var(--gd-primary) !important; }
+.text-gd-accent  { color: var(--gd-accent) !important; }
+.text-gd-accent-dark { color: var(--gd-accent-dark) !important; }
+.text-gd-dark    { color: var(--gd-dark) !important; }
+.text-gd-white   { color: var(--gd-white) !important; }
+
+/* ============================================ */
+/* Переопределение базовых стилей темы          */
+/* ============================================ */
+
+/* Base links & accent */
+a, .color-base { color: var(--gd-primary); }
+a:hover { color: var(--gd-accent-dark); }
+
+/* === Buttons override (Bootstrap 4 compatible) === */
+.btn-primary {
+    background-color: var(--gd-primary);
+    border-color: var(--gd-primary);
+    color: var(--gd-white);
+    transition: background-color var(--gd-transition-normal),
+                border-color var(--gd-transition-normal),
+                color var(--gd-transition-normal);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: var(--gd-accent);
+    border-color: var(--gd-accent);
+    color: var(--gd-dark);
+}
+
+.btn-outline-primary {
+    color: var(--gd-primary);
+    border-color: var(--gd-primary);
+    background-color: transparent;
+    transition: background-color var(--gd-transition-normal),
+                color var(--gd-transition-normal);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    background-color: var(--gd-primary);
+    color: var(--gd-white);
+}
+
+/* Button on dark backgrounds */
+.btn-light {
+    background-color: var(--gd-white);
+    border-color: var(--gd-white);
+    color: var(--gd-dark);
+    transition: background-color var(--gd-transition-normal),
+                border-color var(--gd-transition-normal),
+                color var(--gd-transition-normal);
+}
+.btn-light:hover,
+.btn-light:focus {
+    background-color: var(--gd-accent);
+    border-color: var(--gd-accent);
+    color: var(--gd-dark);
+}
+
+/* === Theme color overrides for Space template === */
+/* Переопределяем дефолтный синий (#007bff) на брендовый */
+
+.btn-default,
+.my-profile .wa-form input[type="submit"] {
+    background-color: var(--gd-primary) !important;
+    border-color: var(--gd-primary) !important;
+}
+.btn-default:hover,
+.my-profile .wa-form input[type="submit"]:hover {
+    background-color: var(--gd-primary-hover) !important;
+}
+
+.btn-outline-default {
+    color: var(--gd-primary) !important;
+}
+.btn-outline-default:hover {
+    color: var(--gd-white) !important;
+    background-color: var(--gd-primary-hover) !important;
+}
+
+/* Accent line under headings */
+.heading-accent-line {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+.heading-accent-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--gd-accent);
+}
+
+/* Focus ring accent */
+.form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gd-accent-dark) !important;
+    box-shadow: 0 0 0 0.2rem var(--gd-accent-ring) !important;
+}
+
+/* Checkbox / radio accent */
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--gd-primary) !important;
+    border-color: var(--gd-primary) !important;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 0.2rem var(--gd-primary-ring) !important;
+}
+
+/* OwlCarousel dot active */
+.owl-carousel button.owl-dot.active {
+    background: var(--gd-primary) !important;
+}
+
+/* Burger hover */
+.icon-burger:hover .icon-burger__line {
+    background-color: var(--gd-primary);
+}
+
+/* Nav links hover */
+.main-nav .main-nav__subs-link:hover,
+.main-nav .main-nav__subs-link.is-selected {
+    background-color: var(--gd-primary) !important;
+}
+
+/* My nav */
+.my-nav li > a {
+    border-color: var(--gd-primary) !important;
+    color: var(--gd-primary);
+}
+.my-nav li > a:hover {
+    background-color: var(--gd-primary) !important;
+    color: var(--gd-white) !important;
+}
+
+/* Button up */
+.button-up {
+    background-color: var(--gd-primary) !important;
+}
+
+/* List styled bullets */
+ul.list-styled li::before {
+    border-color: var(--gd-primary) !important;
+}
+
+/* Header mobile selected */
+.header-mobile .header-mobile__link:hover,
+.header-mobile .header-mobile__link.is-selected {
+    color: var(--gd-primary) !important;
+}
+.header-mobile .header-mobile__subs-link:hover,
+.header-mobile .header-mobile__subs-link.is-selected {
+    color: var(--gd-primary) !important;
+}
+
+/* Userpic */
+.userpic {
+    color: var(--gd-primary) !important;
+}
+
+/* Footer link hover */
+.footer .footer__link:hover {
+    color: var(--gd-primary) !important;
+}
+
+/* === Disclaimer text utility === */
+.text-disclaimer {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* === Section alternating backgrounds === */
+.section-bg-white   { background-color: var(--gd-white); }
+.section-bg-beige   { background-color: var(--gd-light); }
+.section-bg-dark    { background-color: var(--gd-dark); }
+.section-bg-theme   { background-color: var(--gd-primary); }
+.section-bg-accent  { background-color: var(--gd-accent); }
+
+/* === ADD CUSTOM STYLES BELOW THIS LINE === */
