@@ -1,0 +1,86 @@
+{strip}
+
+{* SLIDER *}
+{include file="./layouts/layout.slider.html" inline}
+
+{* FEATURES *}
+{if !empty($theme_settings.features__enable)}
+  {include file="./layouts/layout.features.html" inline}
+{/if}
+
+{* CONTENT 01 *}
+{if !empty($theme_settings.content_01__enable)}
+  {include file="./layouts/layout.content.html" _content_type=$_content_01_type _content_icon_class_array=$_content_01_icon_class_array _content_title=$_content_01_title _content_description=$_content_01_description _content_bg=$_content_01_bg _content_color=$_content_01_color _content_image=$_content_01_image _content_video=$_content_01_video _content_icons=$_content_01_icons _content_icons_columns=$_content_01_icons_columns _content_icons_colors=$_content_01_icons_colors _content_icons_bgs=$_content_01_icons_bgs _content_icons_title=$_content_01_icons_title _content_icons_description=$_content_01_icons_description inline}
+{/if}
+
+{* CONTENT 02 *}
+{if !empty($theme_settings.content_02__enable)}
+  {include file="./layouts/layout.content.html" _content_type=$_content_02_type _content_icon_class_array=$_content_02_icon_class_array _content_title=$_content_02_title _content_description=$_content_02_description _content_bg=$_content_02_bg _content_color=$_content_02_color _content_image=$_content_02_image _content_video=$_content_02_video _content_icons=$_content_02_icons _content_icons_columns=$_content_02_icons_columns _content_icons_colors=$_content_02_icons_colors _content_icons_bgs=$_content_02_icons_bgs _content_icons_title=$_content_02_icons_title _content_icons_description=$_content_02_icons_description inline}
+{/if}
+
+{* CONTENT 03 *}
+{if !empty($theme_settings.content_03__enable)}
+  {include file="./layouts/layout.content.html" _content_type=$_content_03_type _content_icon_class_array=$_content_03_icon_class_array _content_title=$_content_03_title _content_description=$_content_03_description _content_bg=$_content_03_bg _content_color=$_content_03_color _content_image=$_content_03_image _content_video=$_content_03_video _content_icons=$_content_03_icons _content_icons_columns=$_content_03_icons_columns _content_icons_colors=$_content_03_icons_colors _content_icons_bgs=$_content_03_icons_bgs _content_icons_title=$_content_03_icons_title _content_icons_description=$_content_03_icons_description inline}
+{/if}
+
+{* GALLERY 01 *}
+{if !empty($theme_settings.gallery_01__enable)}
+  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_01_title _gallery_description=$_gallery_01_description _gallery_bg=$_gallery_01_bg _gallery_color=$_gallery_01_color _gallery_type=$_gallery_01_type _gallery_album=$_gallery_01_album inline}
+{/if}
+
+{* GALLERY 02 *}
+{if !empty($theme_settings.gallery_02__enable)}
+  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_02_title _gallery_description=$_gallery_02_description _gallery_bg=$_gallery_02_bg _gallery_color=$_gallery_02_color _gallery_type=$_gallery_02_type _gallery_album=$_gallery_02_album inline}
+{/if}
+
+{* GALLERY 03 *}
+{if !empty($theme_settings.gallery_03__enable)}
+  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_03_title _gallery_description=$_gallery_03_description _gallery_bg=$_gallery_03_bg _gallery_color=$_gallery_03_color _gallery_type=$_gallery_03_type _gallery_album=$_gallery_03_album inline}
+{/if}
+
+{* TEAM *}
+{if !empty($theme_settings.team__enable)}
+  {include file="./layouts/layout.team.html" _team_title=$_team_title _team_description=$_team_description _team_bg=$_team_bg _team_color=$_team_color _team_type=$_team_type _team_logins=$_team_logins inline}
+{/if}
+
+{* BLOG *}
+{if !empty($theme_settings.blog__enable)}
+  {include file="./layouts/layout.blog.html" _blog_title=$_blog_title _blog_description=$_blog_description _blog_bg=$_blog_bg _blog_color=$_blog_color _blog_type=$_blog_type _blog_posts=$_blog_posts inline}
+{/if}
+
+{* FAQ *}
+{if !empty($theme_settings.faq__enable)}
+  {include file="./layouts/layout.faq.html" _faq_title=$_faq_title _faq_description=$_faq_description _faq_bg=$_faq_bg _faq_color=$_faq_color _faq_type=$_faq_type _faq_questions=$_faq_questions _faq_answers=$_faq_answers inline}
+{/if}
+
+{* PRICE *}
+{if !empty($theme_settings.price__enable)}
+  {include file="./layouts/layout.price.html" _price_title=$_price_title _price_description=$_price_description _price_bg=$_price_bg _price_color=$_price_color _price_type=$_price_type _price_colors=$_price_01_colors _price_titles=$_price_01_titles _price_descriptions=$_price_01_descriptions _price_prices=$_price_01_prices _price_links=$_price_01_links _price_links_text=$_price_01_links_text inline}
+{/if}
+
+{* COUNTER *}
+{if !empty($theme_settings.counter__enable)}
+  {include file="./layouts/layout.counter.html" _counter_title=$_counter_title _counter_description=$_counter_description _counter_bg=$_counter_bg _counter_color=$_counter_color  _counter_type=$_counter_type _counter_titles=$_counter_01_titles _counter_descriptions=$_counter_01_descriptions _counter_numbers=$_counter_01_numbers inline}
+{/if}
+
+{* REVIEWS *}
+{if !empty($theme_settings.reviews__enable)}
+  {include file="./layouts/layout.reviews.html" _reviews_title=$_reviews_title _reviews_description=$_reviews_description _reviews_bg=$_reviews_bg _reviews_color=$_reviews_color _reviews_type=$_reviews_type _reviews=$_reviews _reviews_link=$_reviews_link inline}
+{/if}
+
+{* PARTNERS *}
+{if !empty($theme_settings.partners__enable)}
+  {include file="./layouts/layout.partners.html" _partners_title=$_partners_title _partners_description=$_partners_description _partners_bg=$_partners_bg _partners_color=$_partners_color _partners_album=$_partners_album inline}
+{/if}
+
+{* TIMELINE *}
+{if !empty($theme_settings.timeline__enable)}
+  {include file="./layouts/layout.timeline.html" _timeline_title=$_timeline_title _timeline_description=$_timeline_description _timeline_bg=$_timeline_bg _timeline_color=$_timeline_color _timeline_titles=$_timeline_titles _timeline_descriptions=$_timeline_descriptions inline}
+{/if}
+
+{* CONTACT *}
+{if !empty($theme_settings.contact__enable)}
+  {include file="./layouts/layout.contact.html" _contact_title=$_contact_title _contact_description=$_contact_description _contact_bg=$_contact_bg _contact_color=$_contact_color _company_phone_main=$_company_phone_main _company_phone_second=$_company_phone_second _company_email=$_company_email _company_address=$_company_address _contact_map=$_contact_map inline}
+{/if}
+
+{/strip}
