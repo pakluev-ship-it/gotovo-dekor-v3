@@ -1,0 +1,173 @@
+{strip}
+
+<!DOCTYPE html>
+
+{if !empty($theme_settings.main__css_min)}{$wa->globals('cssMin', ".min")}{else}{$wa->globals('cssMin', "")}{/if}
+{if !empty($theme_settings.main__js_min)}{$wa->globals('jsMin', ".min")}{else}{$wa->globals('jsMin', "")}{/if}
+
+{* GLOBALS *}
+{$_is_main_page = $wa->globals("isHomePage")}
+{$_css = $wa->globals('cssMin')}
+{$_js = $wa->globals('jsMin')}
+
+{* SETTINGS *}
+{$_color = ''|cat:str_replace('img/themesettings/','',str_replace('.jpg','',$theme_settings.main__color_scheme))}
+{$html_class_array = []}
+{$html_class_array[] = 'main__color_scheme_'|cat:$_color}
+{$html_class_array[] = 'font--'|cat:$theme_settings.main__font}
+
+<html lang="{if $wa->locale()}{$wa->locale()}{else}en{/if}"{if !empty($html_class_array)} class="{join(' ', $html_class_array)}"{/if}>
+<head>
+    <title>{$wa->title()|escape}</title>
+
+    {* META *}
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="keywords" content="{$wa->meta('keywords')|escape}" />
+    <meta name="description" content="{$wa->meta('description')|escape}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {* ICO *}
+    <link rel="shortcut icon" href="{$wa_static_url}favicon.ico" />
+
+    {* CSS *}
+    {if $theme_settings.main__font != "native"}
+      <link href="{$wa_real_theme_url}css/fonts/{$theme_settings.main__font}.min.css?v{$wa_theme_version}" rel="stylesheet" />
+    {/if}
+    <link href="{$wa_real_theme_url}css/bundle.min.css?v{$wa_theme_version}" rel="stylesheet" />
+    <link href="{$wa_real_theme_url}css/theme{$_css}.css?v{$wa_theme_version}" rel="stylesheet" />
+    <link href="{$wa_real_theme_url}css/user.css?v{$wa_theme_version}" rel="stylesheet" />
+
+    {$wa->css()}
+
+    {* JS *}
+    <script src="{$wa_real_theme_url}js/bundle.min.js?v{$wa_theme_version}"></script>
+    {if !empty($theme_settings.main__fa_brands) || !empty($theme_settings.main__fa_regular) || !empty($theme_settings.main__fa_solid)}
+      <script src="{$wa_real_theme_url}js/fontawesome.min.js?v{$wa_theme_version}"></script>
+    {/if}
+    {if !empty($theme_settings.main__fa_brands)}<script src="{$wa_real_theme_url}js/fa-brands.min.js?v{$wa_theme_version}"></script>{/if}
+    {if !empty($theme_settings.main__fa_regular)}<script src="{$wa_real_theme_url}js/fa-regular.min.js?v{$wa_theme_version}"></script>{/if}
+    {if !empty($theme_settings.main__fa_solid)}<script src="{$wa_real_theme_url}js/fa-solid.min.js?v{$wa_theme_version}"></script>{/if}
+    <script src="{$wa_real_theme_url}js/theme{$_js}.js?v{$wa_theme_version}"></script>
+    <script src="{$wa_real_theme_url}js/user.js?v{$wa_theme_version}"></script>
+
+    {$wa->js()}
+
+    {include file="`$wa_active_theme_path`/head.html" inline}
+
+    {$wa->head()}
+
+    {if $_color != "blue" && empty($theme_settings.main__color_scheme_custom)}
+      <link href="{$wa_real_theme_url}css/colors/{$_color}.min.css?v{$wa_theme_version}" rel="stylesheet" />
+    {/if}
+
+    {if !empty($theme_settings.main__color_scheme_custom)}
+      {include file="./components/component.rgba.html" inline}
+    {/if}
+
+    <!-- FontAwesome 5 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Или если нужна более новая версия -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="{if !$_is_main_page} site-page{/if}">
+
+{* HEADER MOBILE *}
+{include file="./layouts/layout.header.mobile.html" inline}
+
+{* HEADER *}
+{include file="./layouts/layout.header.html" inline}
+
+{* HOME PAGE *}
+{if $_is_main_page}
+  {* see home.html to manage block *}
+  {include file="./layouts/layout.home.html" inline}
+{/if}
+
+{* MAIN *}
+{if !$_is_main_page}
+  <div class="main-wrapper">
+
+    {* BREADCRUMBS
+    <div class="container">
+      {include file="`$wa_active_theme_path`/breadcrumbs.html" inline}
+    </div>*}
+
+    {* MY NAV *}
+    {$_is_presonal_area = $wa->globals("isMyAccount")}
+    {if $_is_presonal_area}
+      {if $wa->user()->isAuth()}
+        <nav class="my-nav">
+          <div class="container">
+            <ul class="my-nav__list">
+              {foreach $wa->myNav(false) as $nav}{$nav}{/foreach}
+              <li>
+                <a href="?logout">[`Logout`]</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      {/if}
+    {/if}
+
+    {* CONTENT *}
+    {include file="`$wa_active_theme_path`/main.html" inline}
+
+  </div>
+{/if}
+
+{* FOOTER *}
+{include file="./layouts/layout.footer.html" inline}
+
+{* CALLBACK MODAL *}
+{if $theme_settings.main__easyfeedback == 'default'}
+  <div class="modal fade" id="callback-modal" tabindex="-1" role="dialog" aria-labelledby="callback-modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title title size-typo-xxl" id="callback-modalLabel">Форма обратной связи</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="[`Close`]">
+            <span aria-hidden="true">
+              <svg class="svg-icon svg-icon--xxxl"><use xlink:href="#icon-close"></use></svg>
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {if $wa->easyfeedback}
+            {$wa->easyfeedback->show()}
+          {else}
+            <p>Форма обратной связи в теме дизайна реализована при помощи приложения <a href="https://www.webasyst.ru/store/app/easyfeedback/" target="_blank">Форма обратной связи</a></p>
+            <p>На приложение действует скидка в 80% для покупателей тем дизайна от Easyweb.<a href="https://easyweb.su/blog/sale-feedback-form/" target="_blank"> Подробнее.</a></p>
+          {/if}
+        </div>
+      </div>
+    </div>
+  </div>
+{elseif $theme_settings.main__easyfeedback == 'dialog'}
+  {if $wa->easyfeedback}
+    {$wa->easyfeedback->dialog()}
+  {/if}
+{/if}
+
+{* BUTTON TOP *}
+{if !empty($theme_settings.main__button_up)}
+  <button class="button-up">
+    <svg class="button-up__icon svg-icon svg-icon--xl icon--navup"><use xlink:href="#icon-navup"></use></svg>
+  </button>
+{/if}
+
+{* ADMIN BUTTON *}
+{if !empty($theme_settings.main__admin_sidebar) && $wa->user()->isAdmin()}
+  {include file="./components/component.admin.html" inline}
+{/if}
+
+{include file="./elements/element.icons.html" inline}
+
+{$wa->block("yandex.metrika")}
+
+
+</body>
+</html>
+
+{/strip}
