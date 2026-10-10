@@ -1,0 +1,70 @@
+{strip}
+
+{* CONTACT DATA *}
+{$_company__phone_main = $theme_settings.company__phone_main}
+{$_company__phone_second = $theme_settings.company__phone_second}
+
+{* Desktop version *}
+<div class="contact-fixed-pc d-none d-md-block">
+  <div class="contact-row-1">
+    <div>
+      {if !empty($_company__phone_main)}
+        <a href="tel:{$_company__phone_main|replace:" ":""}" class="contact-phone">
+          {$_company__phone_main}
+        </a>
+      {/if}
+    </div>
+    <div>
+      <a href="#callback-modal" class="callback-btn" data-toggle="modal">
+        Заказать звонок
+      </a>
+    </div>
+  </div>
+  <div class="contact-row-2">
+    <div>
+      {if !empty($_company__phone_second)}
+        <a href="tel:{$_company__phone_second|replace:" ":""}" class="contact-phone">
+          {$_company__phone_second}
+        </a>
+      {/if}
+    </div>
+    <div>
+      <a href="{$wa->block("tezis.tel.max")}" target="_blank" class="messenger-btn max-btn">
+        Max
+      </a>
+      <a href="https://vk.com/write-{$wa->block("tezis.vk_id")}" target="_blank" class="messenger-btn vk-btn">
+        ВК
+      </a>
+    </div>
+  </div>
+</div>
+
+{* Mobile version *}
+<div class="contact-fixed-mobile d-md-none">
+  <div class="container">
+    <div class="contact-content d-flex align-items-center justify-content-between py-2">
+      <div class="phone-block">
+        {if !empty($_company__phone_second)}
+          <a href="tel:{$_company__phone_second|replace:" ":""}" class="contact-phone">
+            {$_company__phone_second}
+          </a>
+        {/if}
+        <div class="work-hours">
+          <i class="far fa-clock mr-1"></i>
+          Пн-Вс 8:00-20:00
+        </div>
+      </div>
+
+      <div class="mobile-buttons d-flex">
+        <a href="{$wa->block("tezis.tel.max")}" target="_blank" class="messenger-btn max-btn">
+          Max
+        </a>
+        <a href="https://vk.com/write-{$wa->block("tezis.vk_id")}" target="_blank" class="messenger-btn vk-btn ml-2">
+          ВК
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/strip}
