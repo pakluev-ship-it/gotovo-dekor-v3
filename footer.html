@@ -1,0 +1,83 @@
+{strip}
+
+{* SHOP DATA *}
+{$_company__phone_main = $theme_settings.company__phone_main}
+{$_company__phone_second = $theme_settings.company__phone_second}
+{$_company__name = $theme_settings.company__name}
+{$_company__address = $theme_settings.company__address}
+{$_company__callback_text = $theme_settings.company__callback_text}
+{$_company__callback_link = $theme_settings.company__callback_link}
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="footer__item col-md-3 col-sm-3">
+            {include file="../components/component.logo.html" _desc="true" inline}
+          </div>
+          <div class="footer__item col-md-3 col-sm-3">
+            <div class="footer__title">[`Company`]</div>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#" class="footer__link">[`About us`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`News`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Employees`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Jobs`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Our shops`]</a></li>
+            </ul>
+          </div>
+          <div class="footer__item col-md-3 col-sm-3">
+            <div class="footer__title">[`Information`]</div>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Help`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Terms of payment`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Terms of delivery`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Warranty`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Capabilities`]</a></li>
+            </ul>
+          </div>
+          <div class="footer__item col-md-3 col-sm-3">
+            <div class="footer__title">[`Help`]</div>
+            <ul class="footer__list">
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Articles`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`FAQ`]</a></li>
+              <li class="footer__list-item"><a href="#" class="footer__link">[`Manufacturers`]</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__item col-md-4" itemscope="" itemtype="http://schema.org/Organization">
+        <div class="footer__title">[`Contacts`]</div>
+        <ul class="footer__list">
+          {if !empty($_company__name)}
+            <li class="footer__list-item" itemprop="name">{$_company__name}</li>
+          {/if}
+          {if !empty($_company__address)}
+            <li class="footer__list-item" itemprop="address">{$_company__address}</li>
+          {/if}
+          {if !empty($_company__phone_main)}
+            <li class="footer__list-item"><a class="footer__link" href="tel:{$_company__phone_main|replace:" ":""}" itemprop="telephone">{$_company__phone_main}</a></li>
+          {/if}
+          {if !empty($_company__phone_second)}
+            <li class="footer__list-item"><a class="footer__link" href="tel:{$_company__phone_second|replace:" ":""}" itemprop="telephone">{$_company__phone_second}</a></li>
+          {/if}
+          {if !empty($_company__callback_text) && !empty($theme_settings.footer__callback)}
+            <li class="footer__list-item">
+              <a class="footer__link" href="{$_company__callback_link}">
+                {$_company__callback_text}
+              </a>
+            </li>
+          {/if}
+        </ul>
+      </div>
+      {if !empty($theme_settings.footer__social)}
+        <div class="col-sm-6 col-12">
+          {include file="../components/component.social.html" inline}
+        </div>
+      {/if}
+    </div>
+    {include file="`$wa_active_theme_path`/footer.html" inline}
+  </div>
+</div>
+
+{/strip}
