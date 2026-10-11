@@ -1,86 +1,907 @@
-{strip}
+{* ============================================ *}
+{* GOTIVO DECOR — Главная страница              *}
+{* Все 23 блока верстаются непосредственно здесь *}
+{* ============================================ *}
 
-{* SLIDER *}
-{include file="./layouts/layout.slider.html" inline}
+{* БЛОК 1: Hero (Первый экран) *}
+<section class="hero-section bg-gd-light" aria-label="Главный экран">
+  <div class="container">
+    <div class="row align-items-center">
 
-{* FEATURES *}
-{if !empty($theme_settings.features__enable)}
-  {include file="./layouts/layout.features.html" inline}
-{/if}
+      {* Левая колонка: Контент *}
+      <div class="col-lg-7 pr-lg-5 col-md-6 col-12 mb-4 mb-md-0">
+        <h1 class="size-typo-xxxxl text-gd-dark mb-3">
+          Декоративная штукатурка в Пензе
+        </h1>
+        <p class="size-typo-xl text-gd-muted mb-4" style="line-height: 1.6;">
+          Материалы, отделка под ключ, обучение
+        </p>
+        <p class="size-typo-l text-gd-muted mb-4" style="line-height: 1.6;">
+          Более 2100 готовых решений с фиксированной ценой. Красивый результат, доступный каждому — без переплат, скрытых платежей и сюрпризов.
+        </p>
+      </div>
 
-{* CONTENT 01 *}
-{if !empty($theme_settings.content_01__enable)}
-  {include file="./layouts/layout.content.html" _content_type=$_content_01_type _content_icon_class_array=$_content_01_icon_class_array _content_title=$_content_01_title _content_description=$_content_01_description _content_bg=$_content_01_bg _content_color=$_content_01_color _content_image=$_content_01_image _content_video=$_content_01_video _content_icons=$_content_01_icons _content_icons_columns=$_content_01_icons_columns _content_icons_colors=$_content_01_icons_colors _content_icons_bgs=$_content_01_icons_bgs _content_icons_title=$_content_01_icons_title _content_icons_description=$_content_01_icons_description inline}
-{/if}
+      {* Правая колонка: CTA-карточка *}
+      <div class="col-lg-5 col-md-6 col-12">
+        <div class="hero-form-card">
+          <h2 class="size-typo-xl text-gd-dark mb-2" style="font-weight: 700;">
+            Бесплатный выезд специалиста с образцами прямо к вам
+          </h2>
+          <p class="size-typo-s text-gd-muted mb-4">
+            Выберите фактуру и цвет у себя дома. Получите точный замер и расчет стоимости на месте. Без обязательств.
+          </p>
 
-{* CONTENT 02 *}
-{if !empty($theme_settings.content_02__enable)}
-  {include file="./layouts/layout.content.html" _content_type=$_content_02_type _content_icon_class_array=$_content_02_icon_class_array _content_title=$_content_02_title _content_description=$_content_02_description _content_bg=$_content_02_bg _content_color=$_content_02_color _content_image=$_content_02_image _content_video=$_content_02_video _content_icons=$_content_02_icons _content_icons_columns=$_content_02_icons_columns _content_icons_colors=$_content_02_icons_colors _content_icons_bgs=$_content_02_icons_bgs _content_icons_title=$_content_02_icons_title _content_icons_description=$_content_02_icons_description inline}
-{/if}
+          <button type="button" class="btn btn-primary btn-block py-3" data-toggle="modal" data-target="#callback-modal">
+            Нужна консультация
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-block mt-2 py-3" data-toggle="modal" data-target="#callback-modal">
+            Уточнить стоимость
+          </button>
 
-{* CONTENT 03 *}
-{if !empty($theme_settings.content_03__enable)}
-  {include file="./layouts/layout.content.html" _content_type=$_content_03_type _content_icon_class_array=$_content_03_icon_class_array _content_title=$_content_03_title _content_description=$_content_03_description _content_bg=$_content_03_bg _content_color=$_content_03_color _content_image=$_content_03_image _content_video=$_content_03_video _content_icons=$_content_03_icons _content_icons_columns=$_content_03_icons_columns _content_icons_colors=$_content_03_icons_colors _content_icons_bgs=$_content_03_icons_bgs _content_icons_title=$_content_03_icons_title _content_icons_description=$_content_03_icons_description inline}
-{/if}
+          <small class="text-gd-muted text-center mt-3 d-block" style="font-size: 11px;" aria-hidden="true">
+            Без спама и навязывания. Ответим в течение 1 рабочего дня.
+          </small>
+        </div>
+      </div>
 
-{* GALLERY 01 *}
-{if !empty($theme_settings.gallery_01__enable)}
-  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_01_title _gallery_description=$_gallery_01_description _gallery_bg=$_gallery_01_bg _gallery_color=$_gallery_01_color _gallery_type=$_gallery_01_type _gallery_album=$_gallery_01_album inline}
-{/if}
+    </div>
+  </div>
+</section>
 
-{* GALLERY 02 *}
-{if !empty($theme_settings.gallery_02__enable)}
-  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_02_title _gallery_description=$_gallery_02_description _gallery_bg=$_gallery_02_bg _gallery_color=$_gallery_02_color _gallery_type=$_gallery_02_type _gallery_album=$_gallery_02_album inline}
-{/if}
 
-{* GALLERY 03 *}
-{if !empty($theme_settings.gallery_03__enable)}
-  {include file="./layouts/layout.gallery.html" _gallery_title=$_gallery_03_title _gallery_description=$_gallery_03_description _gallery_bg=$_gallery_03_bg _gallery_color=$_gallery_03_color _gallery_type=$_gallery_03_type _gallery_album=$_gallery_03_album inline}
-{/if}
 
-{* TEAM *}
-{if !empty($theme_settings.team__enable)}
-  {include file="./layouts/layout.team.html" _team_title=$_team_title _team_description=$_team_description _team_bg=$_team_bg _team_color=$_team_color _team_type=$_team_type _team_logins=$_team_logins inline}
-{/if}
+{* БЛОК 2: Лента преимуществ *}
+<section class="advantages-section py-5" aria-label="Наши преимущества">
+  <div class="container">
+    <ul class="row list-unstyled mb-0">
+      <li class="col-lg-3 col-md-6 col-12 advantage-item mb-4 mb-md-0">
+        <div class="advantage-item__icon-wrapper">
+          <i class="fas fa-industry" aria-hidden="true"></i>
+        </div>
+        <div class="advantage-item__title">Собственное производство</div>
+        <p class="advantage-item__description">Цены без наценок за бренд и доставку из Италии</p>
+      </li>
+      <li class="col-lg-3 col-md-6 col-12 advantage-item mb-4 mb-md-0">
+        <div class="advantage-item__icon-wrapper">
+          <i class="fas fa-file-signature" aria-hidden="true"></i>
+        </div>
+        <div class="advantage-item__title">Фиксированная цена в договоре</div>
+        <p class="advantage-item__description">Оплата только по факту выполнения работ</p>
+      </li>
+      <li class="col-lg-3 col-md-6 col-12 advantage-item mb-4 mb-md-0">
+        <div class="advantage-item__icon-wrapper">
+          <i class="fas fa-user-tie" aria-hidden="true"></i>
+        </div>
+        <div class="advantage-item__title">Бесплатный выезд декоратора</div>
+        <p class="advantage-item__description">Подберем фактуру и цвет у вас дома, при вашем освещении</p>
+      </li>
+      <li class="col-lg-3 col-md-6 col-12 advantage-item">
+        <div class="advantage-item__icon-wrapper">
+          <i class="fas fa-calculator" aria-hidden="true"></i>
+        </div>
+        <div class="advantage-item__title">Точный расчет на месте</div>
+        <p class="advantage-item__description">Никаких доплат в процессе. Смета не вырастет</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-{* BLOG *}
-{if !empty($theme_settings.blog__enable)}
-  {include file="./layouts/layout.blog.html" _blog_title=$_blog_title _blog_description=$_blog_description _blog_bg=$_blog_bg _blog_color=$_blog_color _blog_type=$_blog_type _blog_posts=$_blog_posts inline}
-{/if}
+{* БЛОК 3: Готовые решения — Концепция *}
+<section class="concept-section bg-gd-light py-5" aria-label="Концепция готовых решений">
+  <div class="container">
+    <div class="concept-section__inner">
+      <div class="concept-section__line" aria-hidden="true"></div>
+      <h2 class="concept-section__title">
+        Выбирайте готовые решения — <span class="concept-section__accent">как обои</span>
+      </h2>
+      <p class="concept-section__subtitle">
+        Только уже с нанесением и точной ценой за квадратный метр
+      </p>
+      <div class="concept-section__description">
+        <p>Мы создали готовые решения для самых популярных фактур. Каждое — с проверенной технологией, лучшими цветами и понятной ценой.</p>
+        <p>Вам не нужно разбираться в материалах и слоях. Просто выбираете то, что нравится.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-{* FAQ *}
-{if !empty($theme_settings.faq__enable)}
-  {include file="./layouts/layout.faq.html" _faq_title=$_faq_title _faq_description=$_faq_description _faq_bg=$_faq_bg _faq_color=$_faq_color _faq_type=$_faq_type _faq_questions=$_faq_questions _faq_answers=$_faq_answers inline}
-{/if}
+{* БЛОК 4: Готовые решения — Как это работает *}
+<section class="steps-section py-5" aria-label="Как это работает">
+  <div class="container">
+    <h2 class="steps-section__title">Как это работает</h2>
+    <div class="steps-section__line" aria-hidden="true"></div>
 
-{* PRICE *}
-{if !empty($theme_settings.price__enable)}
-  {include file="./layouts/layout.price.html" _price_title=$_price_title _price_description=$_price_description _price_bg=$_price_bg _price_color=$_price_color _price_type=$_price_type _price_colors=$_price_01_colors _price_titles=$_price_01_titles _price_descriptions=$_price_01_descriptions _price_prices=$_price_01_prices _price_links=$_price_01_links _price_links_text=$_price_01_links_text inline}
-{/if}
+    <ol class="row steps-row list-unstyled mb-0">
+      <li class="col-lg-4 col-md-4 col-12 step-item mb-5 mb-md-0">
+        <div class="step-item__number" aria-hidden="true">1</div>
+        <h3 class="step-item__title">Выбираете фактуру</h3>
+        <p class="step-item__description">Смотрите выкрасы вживую или в каталоге. Прикладываете к своим стенам. Видите, как фактура играет при вашем освещении.</p>
+      </li>
+      <li class="col-lg-4 col-md-4 col-12 step-item mb-5 mb-md-0">
+        <div class="step-item__number" aria-hidden="true">2</div>
+        <h3 class="step-item__title">Видите точную цену</h3>
+        <p class="step-item__description">Для каждого решения указана базовая цена за м² «под ключ» на объем от 30 до 100 м². Меньше 30 м² — стоимость чуть выше. Больше 100 м² — делаем скидку.</p>
+      </li>
+      <li class="col-lg-4 col-md-4 col-12 step-item">
+        <div class="step-item__number" aria-hidden="true">3</div>
+        <h3 class="step-item__title">Получаете результат</h3>
+        <p class="step-item__description">Тот самый, что выбрали. Все материалы и работа уже включены. Цена в каталоге = цена в договоре.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-{* COUNTER *}
-{if !empty($theme_settings.counter__enable)}
-  {include file="./layouts/layout.counter.html" _counter_title=$_counter_title _counter_description=$_counter_description _counter_bg=$_counter_bg _counter_color=$_counter_color  _counter_type=$_counter_type _counter_titles=$_counter_01_titles _counter_descriptions=$_counter_01_descriptions _counter_numbers=$_counter_01_numbers inline}
-{/if}
+{* БЛОК 5: Дожим про выкрасы + переход к каталогу *}
+<section class="swatch-cta-section bg-gd-light" aria-label="Реальные выкрасы фактур">
+  <div class="container">
+    <div class="swatch-cta-section__inner">
 
-{* REVIEWS *}
-{if !empty($theme_settings.reviews__enable)}
-  {include file="./layouts/layout.reviews.html" _reviews_title=$_reviews_title _reviews_description=$_reviews_description _reviews_bg=$_reviews_bg _reviews_color=$_reviews_color _reviews_type=$_reviews_type _reviews=$_reviews _reviews_link=$_reviews_link inline}
-{/if}
+      {* Иконка в круге *}
+      <div class="swatch-cta-section__icon-circle">
+        <i class="fas fa-swatchbook" aria-hidden="true"></i>
+      </div>
 
-{* PARTNERS *}
-{if !empty($theme_settings.partners__enable)}
-  {include file="./layouts/layout.partners.html" _partners_title=$_partners_title _partners_description=$_partners_description _partners_bg=$_partners_bg _partners_color=$_partners_color _partners_album=$_partners_album inline}
-{/if}
+      {* Заголовок с акцентом *}
+      <h3 class="swatch-cta-section__title">
+        У каждой фактуры есть свой <span class="swatch-cta-section__accent">выкрас</span>
+      </h3>
 
-{* TIMELINE *}
-{if !empty($theme_settings.timeline__enable)}
-  {include file="./layouts/layout.timeline.html" _timeline_title=$_timeline_title _timeline_description=$_timeline_description _timeline_bg=$_timeline_bg _timeline_color=$_timeline_color _timeline_titles=$_timeline_titles _timeline_descriptions=$_timeline_descriptions inline}
-{/if}
+      {* Описание *}
+      <p class="swatch-cta-section__description">
+        Вы всегда можете посмотреть и потрогать реальный образец. Не гадать по картинкам, а увидеть своими глазами.
+      </p>
 
-{* CONTACT *}
-{if !empty($theme_settings.contact__enable)}
-  {include file="./layouts/layout.contact.html" _contact_title=$_contact_title _contact_description=$_contact_description _contact_bg=$_contact_bg _contact_color=$_contact_color _company_phone_main=$_company_phone_main _company_phone_second=$_company_phone_second _company_email=$_company_email _company_address=$_company_address _contact_map=$_contact_map inline}
-{/if}
+      {* Разделитель *}
+      <div class="swatch-cta-section__divider" aria-hidden="true"></div>
 
-{/strip}
+      {* Текст перехода *}
+      <p class="swatch-cta-section__transition-text">
+        Смотрите, выбирайте, сравнивайте — всё в одном месте
+      </p>
+
+      {* Стрелка *}
+      <i class="fas fa-chevron-down swatch-cta-section__arrow" aria-hidden="true"></i>
+
+    </div>
+  </div>
+</section>
+
+{* БЛОК 6: Каталог — Интро *}
+<section class="catalog-intro-section" aria-label="Каталог готовых решений">
+  <div class="container">
+    <div class="row align-items-center">
+
+      {* Левая колонка: Заголовок *}
+      <div class="col-lg-5 col-md-6 col-12 mb-4 mb-md-0">
+        <h2 class="catalog-intro-section__title">Каталог готовых решений</h2>
+        <p class="catalog-intro-section__subtitle">
+          <span class="catalog-intro-section__dash" aria-hidden="true"></span>Только проверенные фактуры
+        </p>
+      </div>
+
+      {* Правая колонка: Описание *}
+      <div class="col-lg-7 col-md-6 col-12">
+        <div class="catalog-intro-section__description">
+          <p>Мы предлагали заказчикам на выбор сотни фактур и веер из тысяч цветов. Но всё это только путало. Потому что <span class="catalog-intro-section__stat">95%</span> клиентов выбирают одно и то же.</p>
+          <p>Для этих популярных вариантов мы подобрали лучшие цвета и создали проверенные решения — для отличного качества и лучшей цены.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{* БЛОК 7: Каталог — сетка карточек фактур (единая секция с блоком 6) *}
+<section class="catalog-grid-section" aria-label="Популярные фактуры">
+  <div class="container">
+    <div class="row">
+
+      {* Карточка 1: Карта мира — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Карта+мира" alt="Фактура Карта мира">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Карта мира</h3>
+            <p class="catalog-card__description">Абстрактная картина из текстурных континентов</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 2: Замша — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Замша" alt="Фактура Замша">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Замша</h3>
+            <p class="catalog-card__description">Бархатистая, тёплая, тактильная поверхность</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 3: Микроцемент — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Микроцемент" alt="Фактура Микроцемент">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Микроцемент</h3>
+            <p class="catalog-card__description">Высокопрочный состав, имитирующий индустриальные покрытия</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 4: Травертин — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Травертин" alt="Фактура Травертин">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Травертин</h3>
+            <p class="catalog-card__description">Натуральный каменный эффект с характерной пористой структурой</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 5: Мокрый шёлк — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Мокрый+шёлк" alt="Фактура Мокрый шёлк">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Мокрый шёлк</h3>
+            <p class="catalog-card__description">Гладкая, перламутровая, струящаяся поверхность с мягким сиянием</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 6: Песчаные вихри — видна везде *}
+      <div class="col-lg-4 col-md-6 col-12">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Песчаные+вихри" alt="Фактура Песчаные вихри">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Песчаные вихри</h3>
+            <p class="catalog-card__description">Иллюзия дюн и барханов с игрой радужных переливов</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 7: Бетон (арт-бетон) — скрыта на мобильном *}
+      <div class="col-lg-4 col-md-6 col-12 d-none d-md-block">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Бетон" alt="Фактура Бетон (арт-бетон)">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Бетон (арт-бетон)</h3>
+            <p class="catalog-card__description">Бесшовная бетонная поверхность</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 8: Геометрия — скрыта на мобильном *}
+      <div class="col-lg-4 col-md-6 col-12 d-none d-md-block">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Геометрия" alt="Фактура Геометрия">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Геометрия</h3>
+            <p class="catalog-card__description">Рисунок, задающий ритм интерьеру. Игра линий и объёмов</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточка 9: Марокко — видна только на десктопе *}
+      <div class="col-lg-4 col-md-6 col-12 d-none d-lg-block">
+        <article class="catalog-card">
+          <div class="catalog-card__image-wrapper">
+            <img src="https://via.placeholder.com/800x600/C6A87F/3A3D42?text=Марокко" alt="Фактура Марокко">
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">Марокко</h3>
+            <p class="catalog-card__description">Золотые стены с парящими фактурными облаками</p>
+            <div class="catalog-card__price">
+              от 000 ₽/м² под ключ
+              <small>на объём 30–100 м²</small>
+            </div>
+            <a href="#" class="btn btn-outline-primary catalog-card__btn">Подробнее</a>
+          </div>
+        </article>
+      </div>
+
+      {* Карточки 10-11 (Вавилон, Лён) не рендерятся на главной — только в полном каталоге *}
+
+    </div>
+  </div>
+</section>
+
+{* БЛОК 8: Каталог — футер секции + кнопка «Смотреть все решения» *}
+<section class="catalog-footer-section" aria-label="Переход к полному каталогу">
+  <div class="container">
+    <div class="catalog-footer-section__inner">
+      <p class="catalog-footer-section__text">
+        Это лишь малая часть того, что мы умеем. Десятки фактур, сотни цветов и их сочетаний — под любой интерьер и задачу.
+      </p>
+      <a href="#" class="btn btn-primary catalog-footer-section__btn">
+        Смотреть все решения&nbsp;<i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+{* БЛОК 9: Выезд декоратора — Тест-драйв *}
+<section class="testdrive-section" aria-label="Бесплатный выезд декоратора">
+  <div class="container">
+    <div class="row align-items-center">
+
+      {* Левая колонка: Фото *}
+      <div class="col-lg-5 col-md-6 col-12 mb-4 mb-md-0">
+        <div class="testdrive-section__image-wrapper">
+          <img src="https://via.placeholder.com/800x1000/C6A87F/3A3D42?text=Декоратор+с+образцами" alt="Декоратор подбирает образец штукатурки у клиента дома">
+        </div>
+      </div>
+
+      {* Правая колонка: Контент *}
+      <div class="col-lg-7 col-md-6 col-12">
+
+        {* Лейбл *}
+        <p class="testdrive-section__label">
+          <span class="testdrive-section__dash" aria-hidden="true"></span>
+          Бесплатный тест-драйв декоративной штукатурки
+        </p>
+
+        {* Заголовок H2 *}
+        <h2 class="testdrive-section__title">Увидите, потрогаете, решите — у себя дома</h2>
+
+        {* Описание *}
+        <div class="testdrive-section__description">
+          <p>Картинка на экране — это одно. Даже образец в шоу-руме — совсем другое. А как фактура будет играть при вашем освещении? Как цвет сочетается с полом, мебелью, текстилем?</p>
+          <p>Угадывать не придётся. Приедем к вам с целой библиотекой образцов и подберём идеальное решение прямо на объекте.</p>
+        </div>
+
+        {* Список преимуществ *}
+        <ul class="testdrive-section__list">
+          <li class="testdrive-section__list-item">
+            <div class="testdrive-section__list-icon">
+              <i class="fas fa-suitcase" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="testdrive-section__list-title">Целая библиотека образцов</div>
+              <p class="testdrive-section__list-text">Все популярные фактуры и цвета в одном месте. Смотрите, сравнивайте, трогайте — выбирайте осознанно.</p>
+            </div>
+          </li>
+          <li class="testdrive-section__list-item">
+            <div class="testdrive-section__list-icon">
+              <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="testdrive-section__list-title">Подбор под ваше освещение</div>
+              <p class="testdrive-section__list-text">Вместе приложим разные варианты к вашим стенам. Увидите, как фактура ведёт себя днём, вечером, при искусственном свете.</p>
+            </div>
+          </li>
+          <li class="testdrive-section__list-item">
+            <div class="testdrive-section__list-icon">
+              <i class="fas fa-couch" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="testdrive-section__list-title">Сочетание с вашим интерьером</div>
+              <p class="testdrive-section__list-text">Сразу понятно, подходит ли оттенок к полу, мебели, дверям. Никаких сюрпризов после нанесения.</p>
+            </div>
+          </li>
+          <li class="testdrive-section__list-item">
+            <div class="testdrive-section__list-icon">
+              <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="testdrive-section__list-title">Точные замеры и расчёт на месте</div>
+              <p class="testdrive-section__list-text">Декоратор сразу замерит помещения и рассчитает стоимость работ под ключ или нужное количество материала для самостоятельного нанесения.</p>
+            </div>
+          </li>
+        </ul>
+
+        {* Дожим *}
+        <p class="testdrive-section__push">
+          <strong>Это бесплатно. Без обязательств.</strong> Вы ничего не платите — просто получаете профессиональную консультацию и точный расчёт. Лучший способ выбрать декор — увидеть его вживую на своих стенах. Не доверяйте картинкам — доверяйте своим глазам и рукам.
+        </p>
+
+        {* CTA *}
+        <button type="button" class="btn btn-primary testdrive-section__btn" data-toggle="modal" data-target="#callback-modal">
+          Пригласить декоратора
+        </button>
+        <p class="testdrive-section__note">Выезд в удобное для вас время. Работаем по Пензе и области.</p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{* БЛОК 10A: Механизированное нанесение — Инфографика + CTA *}
+<section class="mech-intro-section bg-gd-light" aria-label="Механизированное нанесение">
+  <div class="container">
+
+    {* Зона A: Шапка секции *}
+    <div class="mech-intro-section__header">
+      <p class="mech-intro-section__label">Для площадей от 200 м²</p>
+      <h2 class="mech-intro-section__title">Большие объёмы? Нанесём механизированно</h2>
+      <p class="mech-intro-section__subtitle">Быстрее, дешевле, стабильнее по качеству</p>
+      <div class="mech-intro-section__description">
+        <p>Если у вас большая площадь — от 200 м² и выше — предлагаем механизированное нанесение декоративной штукатурки. Это когда материал наносится не вручную шпателем, а специальным оборудованием.</p>
+        <p>Результат: быстрее в разы, дешевле по стоимости, и качество не зависит от «человеческого фактора».</p>
+      </div>
+    </div>
+
+    {* Зона B: Инфографика сравнения *}
+    <!-- цифры уточнить у заказчика -->
+    <div class="mech-intro-section__compare">
+      <div class="row align-items-center">
+        <div class="col-md-5 mech-intro-section__compare-col">
+          <div class="mech-intro-section__compare-title mech-intro-section__compare-title--manual">Вручную</div>
+          <div class="mech-intro-section__compare-param mech-intro-section__compare-param--manual">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            <span>7 дней</span>
+          </div>
+          <div class="mech-intro-section__compare-param mech-intro-section__compare-param--manual">
+            <i class="fas fa-ruble-sign" aria-hidden="true"></i>
+            <span>900 ₽/м²</span>
+          </div>
+        </div>
+        <div class="col-md-2 mech-intro-section__compare-vs">VS</div>
+        <div class="col-md-5 mech-intro-section__compare-col">
+          <div class="mech-intro-section__compare-title mech-intro-section__compare-title--mech">Механизированно</div>
+          <div class="mech-intro-section__compare-param mech-intro-section__compare-param--mech">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            <span>3 дня</span>
+          </div>
+          <div class="mech-intro-section__compare-param mech-intro-section__compare-param--mech">
+            <i class="fas fa-ruble-sign" aria-hidden="true"></i>
+            <span>750 ₽/м²</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {* Зона C: CTA + disclaimer *}
+    <div class="mech-intro-section__cta">
+      <button type="button" class="btn btn-primary mech-intro-section__btn" data-toggle="modal" data-target="#callback-modal">
+        Узнать стоимость механизированного нанесения
+      </button>
+      <p class="mech-intro-section__note">Рассчитаем стоимость под ваш объём и фактуру. Ответим в течение 1 рабочего дня.</p>
+    </div>
+
+  </div>
+</section>
+
+{* БЛОК 10B: Механизированное нанесение — Детали применения *}
+<section class="mech-details-section" aria-label="Детали механизированного нанесения">
+  <div class="container">
+
+    {* Зона A: Три преимущества *}
+    <div class="row mech-details-section__advantages">
+      <div class="col-lg-4 col-md-4 col-12 mech-details-section__advantage-item">
+        <div class="mech-details-section__advantage-icon">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+        </div>
+        <div class="mech-details-section__advantage-title">Скорость</div>
+        <p class="mech-details-section__advantage-text">В 3–5 раз быстрее ручного нанесения. То, что вручную занимает неделю, механизированно делаем за 1–2 дня.</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-12 mech-details-section__advantage-item">
+        <div class="mech-details-section__advantage-icon">
+          <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+        </div>
+        <div class="mech-details-section__advantage-title">Экономия</div>
+        <p class="mech-details-section__advantage-text">Меньше трудозатрат — ниже цена за м². Особенно ощутимо на больших площадях.</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-12 mech-details-section__advantage-item">
+        <div class="mech-details-section__advantage-icon">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        </div>
+        <div class="mech-details-section__advantage-title">Стабильное качество</div>
+        <p class="mech-details-section__advantage-text">Оборудование наносит материал равномерно. Нет «человеческого фактора», усталости мастера, разного нажима.</p>
+      </div>
+    </div>
+
+    {* Зона B: Что можно наносить + Для кого *}
+    <div class="row">
+      <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+        <h3 class="mech-details-section__info-title">Что можно наносить</h3>
+        <div class="mech-details-section__info-item">
+          <div class="mech-details-section__info-icon">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="mech-details-section__info-item-title">Простые фактуры</div>
+            <p class="mech-details-section__info-item-text">Шуба, гротто и другие базовые покрытия. Идеально для фасадов, МОПов, коммерческих помещений.</p>
+          </div>
+        </div>
+        <div class="mech-details-section__info-item">
+          <div class="mech-details-section__info-icon">
+            <i class="fas fa-gem" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="mech-details-section__info-item-title">Сложные фактуры</div>
+            <p class="mech-details-section__info-item-text">Бетон, карта мира, травертин. Да, даже такие фактуры можно наносить механизированно — быстро и без потери качества.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12">
+        <h3 class="mech-details-section__info-title">Для кого это</h3>
+        <ul class="mech-details-section__who-list">
+          <li><i class="fas fa-check" aria-hidden="true"></i>&nbsp;Фасады домов и коммерческих зданий</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>&nbsp;Подъезды и места общего пользования</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>&nbsp;Офисы, рестораны, торговые центры</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>&nbsp;Частные дома с большой площадью стен</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{* БЛОК 11A: Почему лучшая цена — Три кита *}
+<section class="price-pillars-section bg-gd-light" aria-label="Почему у нас лучшая цена">
+  <div class="container">
+
+    {* Зона A: Шапка секции *}
+    <div class="price-pillars-section__header">
+      <h2 class="price-pillars-section__title">Лучшая цена на отделку стен под ключ</h2>
+      <p class="price-pillars-section__subtitle">Без потери качества — только за счёт грамотного подхода</p>
+      <div class="price-pillars-section__description">
+        <p>Мы не демпингуем и не экономим на материалах. Мы просто убрали всё лишнее из цепочки: лишних посредников, лишние слои, лишние наценки.</p>
+        <p>Вот три причины, почему наша цена — лучшая в Пензе.</p>
+      </div>
+    </div>
+
+    {* Зона B: Три кита *}
+    <div class="row price-pillars-section__pillars">
+      <div class="col-lg-4 col-md-4 col-12">
+        <article class="price-pillars-section__pillar">
+          <div class="price-pillars-section__pillar-icon">
+            <i class="fas fa-industry" aria-hidden="true"></i>
+          </div>
+          <h3 class="price-pillars-section__pillar-title">Собственное производство</h3>
+          <p class="price-pillars-section__pillar-text">Основные материалы — под нашим брендом. Никакой переплаты за имя, доставку из Италии и наценки 2–3–5 посредников в цепочке. Вы платите за материал, а не за логотип.</p>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <article class="price-pillars-section__pillar">
+          <div class="price-pillars-section__pillar-icon">
+            <i class="fas fa-handshake" aria-hidden="true"></i>
+          </div>
+          <h3 class="price-pillars-section__pillar-title">Дилерские условия</h3>
+          <p class="price-pillars-section__pillar-text">Тщательно подобрали лучших производителей в категории «цена-качество» и стали их официальными дилерами. Получаем материалы по специальным ценам — и передаём эту выгоду вам.</p>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <article class="price-pillars-section__pillar">
+          <div class="price-pillars-section__pillar-icon">
+            <i class="fas fa-cogs" aria-hidden="true"></i>
+          </div>
+          <h3 class="price-pillars-section__pillar-title">Проработанная технология</h3>
+          <p class="price-pillars-section__pillar-text">Для каждой фактуры есть точная технологическая карта. Мы знаем, сколько материала нужно, какие слои обязательны, а какие — лишние. Никакого перерасхода. Вы не платите за то, что не нужно.</p>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{* БЛОК 11B: Стоимость как у фрилансеров — дожим *}
+<section class="price-trigger-section" aria-label="Стоимость как у фрилансеров">
+  <div class="container">
+    <div class="price-trigger-section__inner">
+
+      {* Поясняющий текст *}
+      <p class="price-trigger-section__intro">
+        Всё это вместе — собственные материалы, дилерские условия и точные технологии — даёт вам реально выгодные цены. И на материалы, и на работы под ключ.
+      </p>
+
+      {* Акцентная строка-триггер *}
+      <p class="price-trigger-section__trigger">
+        Стоимость как у фрилансеров с Авито. Даже дешевле.
+      </p>
+
+      {* Поясняющий текст про договор *}
+      <p class="price-trigger-section__contract">
+        При этом мы работаем по договору, с гарантией и фиксированной ценой. Нацелены на постоянную работу и рекомендации, а не на разовые заказы.
+      </p>
+
+      {* Финальный текст *}
+      <p class="price-trigger-section__final">
+        Прозрачные условия, фиксированные цены и юридические гарантии. Вы защищены на каждом этапе — от первого звонка до приёмки работ.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+{* БЛОК 12: CTA — Точный расчёт за 1 день *}
+<section class="estimate-cta-section" aria-label="Получить точный расчёт">
+  <div class="container">
+    <div class="row align-items-center">
+
+      {* Левая колонка: Контент *}
+      <div class="col-lg-7 pr-lg-5 col-md-6 col-12 mb-4 mb-md-0">
+
+        {* Лейбл *}
+        <p class="estimate-cta-section__label">
+          <i class="far fa-clock" aria-hidden="true"></i>
+          Расчёт за 1 день
+        </p>
+
+        {* Заголовок H2 *}
+        <h2 class="estimate-cta-section__title">Получите точный расчёт под ваш объём за 1 день</h2>
+
+        {* Описание *}
+        <p class="estimate-cta-section__description">
+          Мы уже рассказали, почему наша цена — лучшая. Теперь покажем конкретно для вас. Рассчитаем стоимость работ и материалов под ваши площади, выбранные фактуры и условия. Без скрытых доплат, без «от 500 ₽», без неделями ожидания.
+        </p>
+
+        {* Список "Что входит" *}
+        <ul class="estimate-cta-section__list">
+          <li class="estimate-cta-section__list-item">
+            <div class="estimate-cta-section__list-icon">
+              <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="estimate-cta-section__list-title">Точная стоимость за м²</div>
+              <p class="estimate-cta-section__list-text">Под ваш объём: до 30 м², 30–100 м² или больше 100 м² (с учётом скидки).</p>
+            </div>
+          </li>
+          <li class="estimate-cta-section__list-item">
+            <div class="estimate-cta-section__list-icon">
+              <i class="fas fa-file-invoice" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="estimate-cta-section__list-title">Детальная смета</div>
+              <p class="estimate-cta-section__list-text">Все материалы, слои, подготовка, нанесение, финишное покрытие. Видно, за что платите.</p>
+            </div>
+          </li>
+          <li class="estimate-cta-section__list-item">
+            <div class="estimate-cta-section__list-icon">
+              <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="estimate-cta-section__list-title">Варианты экономии</div>
+              <p class="estimate-cta-section__list-text">Если есть способы снизить стоимость без потери качества — обязательно подскажем.</p>
+            </div>
+          </li>
+          <li class="estimate-cta-section__list-item">
+            <div class="estimate-cta-section__list-icon">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="estimate-cta-section__list-title">Сроки выполнения работ</div>
+              <p class="estimate-cta-section__list-text">Когда сможем начать и когда закончим.</p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      {* Правая колонка: CTA-карточка *}
+      <div class="col-lg-5 col-md-6 col-12">
+        <div class="estimate-cta-section__card">
+
+          {* Иконка-таймер *}
+          <i class="fas fa-stopwatch estimate-cta-section__card-icon" aria-hidden="true"></i>
+
+          {* Заголовок карточки *}
+          <h3 class="estimate-cta-section__card-title">Расчёт за 1 день</h3>
+
+          {* Описание карточки *}
+          <p class="estimate-cta-section__card-subtitle">Без «от 500 ₽» и ожидания неделями</p>
+
+          {* Кнопка *}
+          <button type="button" class="btn btn-primary estimate-cta-section__btn" data-toggle="modal" data-target="#callback-modal">
+            Получить расчёт
+          </button>
+
+          {* Снятие страха *}
+          <p class="estimate-cta-section__note">
+            Без обязательств. Без спама. Если цена не устроит — просто не продолжаете разговор.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{* БЛОК 13: Качественные материалы (4 типа составов) *}
+<section class="materials-section bg-gd-light" aria-label="Типы материалов">
+  <div class="container">
+
+    {* Зона A: Шапка секции *}
+    <div class="materials-section__header">
+      <h2 class="materials-section__title">Все наши покрытия — моющиеся и прочные</h2>
+      <p class="materials-section__subtitle">Никакой шпаклёвки и гипса. Только специализированные материалы.</p>
+      <div class="materials-section__description">
+        <p>Отделку декоративной штукатуркой делаем только качественными материалами, специально предназначенными для декоративной отделки.</p>
+        <p>Никакой обычной шпаклёвки, гипсовой штукатурки и «народных» технологий. Каждое покрытие рассчитано на годы эксплуатации: не боится влаги, не трескается, легко моется.</p>
+      </div>
+    </div>
+
+    {* Зона B: 4 типа материалов *}
+    <div class="row materials-section__cards">
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="materials-section__card">
+          <div class="materials-section__card-icon">
+            <i class="fas fa-tint" aria-hidden="true"></i>
+          </div>
+          <div class="materials-section__card-body">
+            <h3 class="materials-section__card-title">Акриловые</h3>
+            <p class="materials-section__card-text">Современные полимерные составы. Высокая эластичность, влагостойкость, можно мыть. Подходят для любых помещений, включая кухни и коридоры.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="materials-section__card">
+          <div class="materials-section__card-icon">
+            <i class="fas fa-leaf" aria-hidden="true"></i>
+          </div>
+          <div class="materials-section__card-body">
+            <h3 class="materials-section__card-title">Известковые</h3>
+            <p class="materials-section__card-text">Натуральные материалы. Создают эффект старины и благородную глубину. Дышащие, с антисептическими свойствами — не дают развиваться плесени.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="materials-section__card">
+          <div class="materials-section__card-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <div class="materials-section__card-body">
+            <h3 class="materials-section__card-title">Микроцемент</h3>
+            <p class="materials-section__card-text">Бесшовное покрытие. Сверхпрочное, водостойкое. Идеально для влажных помещений: ванные, душевые, зоны вокруг раковин.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="materials-section__card">
+          <div class="materials-section__card-icon">
+            <i class="fas fa-home" aria-hidden="true"></i>
+          </div>
+          <div class="materials-section__card-body">
+            <h3 class="materials-section__card-title">Силиконовые</h3>
+            <p class="materials-section__card-text">Мембранные составы: не пропускают воду, но позволяют стенам «дышать». Обладают эффектом самоочищения — грязь просто смывается дождём. Отличный выбор для фасадов.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    {* Зона C: Дожим про подбор *}
+    <p class="materials-section__push">
+      Мы поможем подобрать тип материала под вашу задачу, помещение и бюджет. Не нужно разбираться в составах самостоятельно — просто расскажите, что хотите получить, и мы предложим оптимальный вариант.
+    </p>
+
+    {* Зона D: CTA *}
+    <div class="materials-section__cta">
+      <button type="button" class="btn btn-primary materials-section__btn" data-toggle="modal" data-target="#callback-modal">
+        Получить консультацию по материалам
+      </button>
+      <p class="materials-section__note">Расскажем о каждом типе материала, поможем выбрать под вашу задачу. Ответим в течение 1 рабочего дня.</p>
+    </div>
+
+  </div>
+</section>
+
+{* БЛОК 14: Прозрачное ценообразование *}
+<section class="transparency-section" aria-label="Прозрачное ценообразование">
+  <div class="container">
+
+    {* Зона A: Шапка секции *}
+    <div class="transparency-section__header">
+      <h2 class="transparency-section__title">Никаких сюрпризов в процессе</h2>
+      <p class="transparency-section__subtitle">Вы платите только за то, что действительно нужно</p>
+      <p class="transparency-section__description">
+        Мы заранее рассчитываем точное количество материала под ваши стены. Вы не переплачиваете за лишнее и не доплачиваете в процессе. Всё прозрачно и понятно с самого начала.
+      </p>
+    </div>
+
+    {* Зона B: 4 принципа прозрачности *}
+    <div class="row transparency-section__cards">
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="transparency-section__card">
+          <div class="transparency-section__card-icon">
+            <i class="fas fa-boxes" aria-hidden="true"></i>
+          </div>
+          <h3 class="transparency-section__card-title">Колеруем и привозим ровно столько, сколько нужно</h3>
+          <p class="transparency-section__card-text">Вы не платите за остатки материала в вёдрах. Не нужно потом думать, куда деть лишнюю штукатурку.</p>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="transparency-section__card">
+          <div class="transparency-section__card-icon">
+            <i class="fas fa-truck-loading" aria-hidden="true"></i>
+          </div>
+          <h3 class="transparency-section__card-title">Если материала не хватило — это наша проблема</h3>
+          <p class="transparency-section__card-text">Докрасим и довезём за свой счёт. Никаких доплат «за перерасход».</p>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="transparency-section__card">
+          <div class="transparency-section__card-icon">
+            <i class="fas fa-file-contract" aria-hidden="true"></i>
+          </div>
+          <h3 class="transparency-section__card-title">Никаких скрытых работ</h3>
+          <p class="transparency-section__card-text">Все этапы прописаны заранее: подготовка, нанесение, финишное покрытие. Если что-то не входит в стандартный пакет — предупреждаем сразу, до подписания договора.</p>
+        </article>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <article class="transparency-section__card">
+          <div class="transparency-section__card-icon">
+            <i class="fas fa-receipt" aria-hidden="true"></i>
+          </div>
+          <h3 class="transparency-section__card-title">Вы всегда знаете, за что платите</h3>
+          <p class="transparency-section__card-text">Каждый этап, каждый материал, каждый слой — всё видно в смете. Никаких «а вот это не учли» и «а за это нужно доплатить» в середине работ.</p>
+        </article>
+      </div>
+    </div>
+
+    {* Зона C: Дожим *}
+    <p class="transparency-section__push">
+      Прозрачность — это не просто слово. Это конкретные обязательства: точный расчёт, никаких лишних затрат и никаких неожиданностей.
+    </p>
+
+    {* Зона D: CTA *}
+    <div class="transparency-section__cta">
+      <button type="button" class="btn btn-primary transparency-section__btn" data-toggle="modal" data-target="#callback-modal">
+        Узнать точную стоимость под мой объём
+      </button>
+      <p class="transparency-section__note">Рассчитаем стоимость под ваши площади и выбранные фактуры. Ответим в течение 1 рабочего дня.</p>
+    </div>
+
+  </div>
+</section>
