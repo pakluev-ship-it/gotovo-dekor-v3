@@ -8,76 +8,70 @@
 {$_company__callback_text = $theme_settings.company__callback_text}
 {$_company__callback_link = $theme_settings.company__callback_link}
 
-<div class="footer">
+<footer class="site-footer py-4" role="contentinfo" aria-label="Подвал сайта">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="footer__item col-md-3 col-sm-3">
-            {include file="../components/component.logo.html" _desc="true" inline}
-          </div>
-          <div class="footer__item col-md-3 col-sm-3">
-            <div class="footer__title">[`Company`]</div>
-            <ul class="footer__list">
-              <li class="footer__list-item"><a href="#" class="footer__link">[`About us`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`News`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Employees`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Jobs`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Our shops`]</a></li>
-            </ul>
-          </div>
-          <div class="footer__item col-md-3 col-sm-3">
-            <div class="footer__title">[`Information`]</div>
-            <ul class="footer__list">
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Help`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Terms of payment`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Terms of delivery`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Warranty`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Capabilities`]</a></li>
-            </ul>
-          </div>
-          <div class="footer__item col-md-3 col-sm-3">
-            <div class="footer__title">[`Help`]</div>
-            <ul class="footer__list">
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Articles`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`FAQ`]</a></li>
-              <li class="footer__list-item"><a href="#" class="footer__link">[`Manufacturers`]</a></li>
-            </ul>
-          </div>
+
+    {* Строка 1: Основная *}
+    <div class="row align-items-center">
+
+      {* Логотип + название *}
+      <div class="col-lg-3 col-md-4 col-12 mb-3 mb-md-0">
+        <div class="footer-logo">
+          {include file="../components/component.logo.html" _desc="true" inline}
         </div>
       </div>
-      <div class="footer__item col-md-4" itemscope="" itemtype="http://schema.org/Organization">
-        <div class="footer__title">[`Contacts`]</div>
-        <ul class="footer__list">
-          {if !empty($_company__name)}
-            <li class="footer__list-item" itemprop="name">{$_company__name}</li>
-          {/if}
-          {if !empty($_company__address)}
-            <li class="footer__list-item" itemprop="address">{$_company__address}</li>
-          {/if}
-          {if !empty($_company__phone_main)}
-            <li class="footer__list-item"><a class="footer__link" href="tel:{$_company__phone_main|replace:" ":""}" itemprop="telephone">{$_company__phone_main}</a></li>
-          {/if}
-          {if !empty($_company__phone_second)}
-            <li class="footer__list-item"><a class="footer__link" href="tel:{$_company__phone_second|replace:" ":""}" itemprop="telephone">{$_company__phone_second}</a></li>
-          {/if}
-          {if !empty($_company__callback_text) && !empty($theme_settings.footer__callback)}
-            <li class="footer__list-item">
-              <a class="footer__link" href="{$_company__callback_link}">
-                {$_company__callback_text}
-              </a>
+
+      {* Навигация *}
+      <div class="col-lg-6 col-md-4 col-12 mb-3 mb-md-0">
+        <nav aria-label="Навигация в подвале">
+          <ul class="footer-nav">
+            <li class="footer-nav__item">
+              <a href="#catalog" class="footer-nav__link">Каталог фактур</a>
             </li>
-          {/if}
-        </ul>
+            <li class="footer-nav__item">
+              <a href="#services" class="footer-nav__link">Услуги</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#portfolio" class="footer-nav__link">Портфолио</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#contacts" class="footer-nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      {if !empty($theme_settings.footer__social)}
-        <div class="col-sm-6 col-12">
-          {include file="../components/component.social.html" inline}
-        </div>
-      {/if}
+
+      {* Телефон *}
+      <div class="col-lg-3 col-md-4 col-12">
+        {if !empty($_company__phone_main)}
+          <a href="tel:{$_company__phone_main|replace:" ":""}" class="footer-phone text-lg-right d-block">
+            <i class="fas fa-phone mr-2"></i>{$_company__phone_main}
+          </a>
+        {/if}
+        {if !empty($_company__phone_second)}
+          <a href="tel:{$_company__phone_second|replace:" ":""}" class="footer-phone text-lg-right d-block mt-2">
+            <i class="fas fa-phone mr-2"></i>{$_company__phone_second}
+          </a>
+        {/if}
+      </div>
+
     </div>
-    {include file="`$wa_active_theme_path`/footer.html" inline}
+
+    {* Строка 2: Юридическая *}
+    <div class="row site-footer__legal">
+      <div class="col-lg-6 col-md-6 col-12 mb-2 mb-md-0">
+        {if !empty($_company__name)}
+          © 2026 {$_company__name}. Все права защищены.
+        {else}
+          © 2026 Готово Декор. Все права защищены.
+        {/if}
+      </div>
+      <div class="col-lg-6 col-md-6 col-12 text-md-right">
+        <a href="/politika/" rel="noopener">Политика конфиденциальности</a>
+      </div>
+    </div>
+
   </div>
-</div>
+</footer>
 
 {/strip}
