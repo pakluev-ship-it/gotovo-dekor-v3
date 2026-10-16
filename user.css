@@ -1,8 +1,3 @@
-/* ============================================ */
-/* GOTIVO DECOR — Дизайн-система               */
-/* CSS-переменные брендовых цветов              */
-/* ============================================ */
-
 /* FontAwesome 6 через CDN (гарантированная загрузка) */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
@@ -245,7 +240,7 @@ ul.list-styled li::before {
 
 /* Фоновое изображение с parallax-эффектом */
 .hero-section {
-  background-image:
+  background-image: 
     linear-gradient(135deg, rgba(209,204,200,0.92) 0%, rgba(209,204,200,0.75) 100%),
     url('/wa-data/public/site/img/fon_base_1920_1080.png');
   background-size: cover;
@@ -283,7 +278,7 @@ ul.list-styled li::before {
     padding-top: 88px; /* 48px standard + 40px header offset */
     padding-bottom: 40px;
     background-attachment: scroll;
-    background-image:
+    background-image: 
       linear-gradient(135deg, rgba(209,204,200,0.88) 0%, rgba(209,204,200,0.88) 100%),
       url('/wa-data/public/site/img/fon_base_1920_1080.png');
   }
@@ -1091,11 +1086,11 @@ ul.list-styled li::before {
   .catalog-grid-section {
     padding: 40px 0 48px;
   }
-
+  
   .catalog-card {
     margin-bottom: 32px;
   }
-
+  
   .catalog-card:last-child {
     margin-bottom: 0;
   }
@@ -2197,6 +2192,610 @@ ul.list-styled li::before {
   .transparency-section__card-icon i {
     font-size: 24px;
   }
+}
+
+/* === БЛОК 15: Гарантии — Договор и оплата по факту === */
+
+.guarantees-section {
+  padding: 80px 0;
+}
+
+.guarantees-section__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.guarantees-section__title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gd-dark);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+.guarantees-section__subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gd-accent-dark);
+  margin: 0 0 20px;
+}
+
+.guarantees-section__description {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.guarantees-section__description p {
+  font-size: 15px;
+  color: var(--gd-text-muted);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.guarantees-section__description p:last-child {
+  margin-bottom: 0;
+}
+
+.guarantees-section__description strong {
+  color: var(--gd-dark);
+  font-weight: 700;
+}
+
+/* Карточки гарантий */
+.guarantees-section__pillars {
+  margin-bottom: 48px;
+}
+
+.guarantees-section__pillar {
+  background: var(--gd-white);
+  border-radius: var(--gd-radius-md);
+  padding: 28px 20px;
+  box-shadow: 0 2px 8px rgba(58, 61, 66, 0.06);
+  text-align: center;
+  margin-bottom: 24px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guarantees-section__pillar--accent {
+  border: 2px solid var(--gd-primary);
+  background: rgba(46, 90, 82, 0.04);
+}
+
+.guarantees-section__pillar-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--gd-accent-dark);
+  color: var(--gd-white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.guarantees-section__pillar-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gd-icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.guarantees-section__pillar-icon i {
+  font-size: 24px;
+  color: var(--gd-accent-dark);
+}
+
+.guarantees-section__pillar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gd-dark);
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.guarantees-section__pillar-text {
+  font-size: 13px;
+  color: var(--gd-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Hover only on desktop */
+@media (min-width: 768px) {
+  .guarantees-section__pillar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(58, 61, 66, 0.12);
+  }
+}
+
+/* Дожим */
+.guarantees-section__push {
+  font-size: 15px;
+  color: var(--gd-dark);
+  line-height: 1.6;
+  padding-left: 20px;
+  border-left: 3px solid var(--gd-accent);
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+/* Переход */
+.guarantees-section__transition {
+  text-align: center;
+}
+
+.guarantees-section__transition-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gd-dark);
+  margin: 0;
+}
+
+.guarantees-section__arrow {
+  display: inline-block;
+  font-size: 24px;
+  color: var(--gd-primary);
+  margin-top: 16px;
+  animation: arrow-bounce 2s ease-in-out infinite;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .guarantees-section {
+    padding: 48px 0;
+  }
+  .guarantees-section__title {
+    font-size: 24px;
+  }
+  .guarantees-section__subtitle {
+    font-size: 15px;
+  }
+  .guarantees-section__pillar {
+    padding: 24px 16px;
+  }
+  .guarantees-section__pillar-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .guarantees-section__pillar-icon i {
+    font-size: 20px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .guarantees-section__arrow {
+    animation: none;
+  }
+}
+
+/* === БЛОК 16: Экспертная помощь ДО начала ремонта === */
+
+.prehelp-section {
+  background-color: var(--gd-white);
+  padding: 80px 0;
+}
+
+.prehelp-section__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Лейбл */
+.prehelp-section__label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gd-accent-dark);
+  margin: 0 0 12px;
+}
+
+.prehelp-section__dash {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--gd-accent-dark);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Заголовок */
+.prehelp-section__title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gd-dark);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+/* Подзаголовок */
+.prehelp-section__subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gd-accent-dark);
+  margin: 0 0 20px;
+}
+
+/* Описание */
+.prehelp-section__description {
+  font-size: 15px;
+  color: var(--gd-text-muted);
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prehelp-section__description strong {
+  color: var(--gd-dark);
+  font-weight: 700;
+}
+
+/* Чек-лист */
+.prehelp-section__checklist-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gd-dark);
+  margin: 0 0 20px;
+}
+
+.prehelp-section__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prehelp-section__checklist-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.prehelp-section__checklist-item:last-child {
+  margin-bottom: 0;
+}
+
+.prehelp-section__checklist-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gd-icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.prehelp-section__checklist-icon i {
+  font-size: 18px;
+  color: var(--gd-accent-dark);
+}
+
+.prehelp-section__checklist-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gd-dark);
+  margin: 0 0 4px;
+}
+
+.prehelp-section__checklist-item-text {
+  font-size: 13px;
+  color: var(--gd-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Карточка "Когда пригласить" */
+.prehelp-section__when-card {
+  background: var(--gd-white);
+  border: 1px solid rgba(58, 61, 66, 0.10);
+  border-top: 4px solid var(--gd-accent-dark);
+  border-radius: var(--gd-radius-md);
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(58, 61, 66, 0.08);
+  height: 100%;
+  text-align: center;
+}
+
+.prehelp-section__when-icon {
+  font-size: 36px;
+  color: var(--gd-accent-dark);
+  margin-bottom: 16px;
+}
+
+.prehelp-section__when-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gd-dark);
+  margin: 0 0 16px;
+}
+
+.prehelp-section__when-text p {
+  font-size: 15px;
+  color: var(--gd-dark);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.prehelp-section__when-text p:last-child {
+  margin-bottom: 0;
+}
+
+.prehelp-section__when-text strong {
+  color: var(--gd-accent-dark);
+  font-weight: 700;
+}
+
+.prehelp-section__saving {
+  background: var(--gd-icon-bg);
+  color: var(--gd-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: var(--gd-radius-md);
+  margin: 16px 0 0;
+  line-height: 1.4;
+}
+
+/* CTA */
+.prehelp-section__cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.prehelp-section__btn {
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.prehelp-section__note {
+  font-size: 11px;
+  color: var(--gd-text-muted);
+  margin: 12px 0 0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .prehelp-section {
+    padding: 48px 0;
+  }
+  .prehelp-section__title {
+    font-size: 24px;
+  }
+  .prehelp-section__subtitle {
+    font-size: 15px;
+  }
+  .prehelp-section__when-card {
+    margin-top: 32px;
+  }
+}
+
+/* === БЛОК 17: 7 этапов работы === */
+
+.steps-process-section {
+  padding: 80px 0;
+}
+
+/* Лейбл */
+.steps-process-section__label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gd-accent-dark);
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+/* Заголовок */
+.steps-process-section__title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gd-text);
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+/* Подзаголовок */
+.steps-process-section__subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gd-accent-dark);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+/* Описание */
+.steps-process-section__description {
+  font-size: 15px;
+  color: var(--gd-text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+/* Таймлайн — общая обёртка */
+.steps-process-section__timeline {
+  background: var(--gd-bg-white);
+  border-radius: 16px;
+  padding: 48px 32px 32px;
+  box-shadow: 0 4px 16px rgba(58, 61, 66, 0.08);
+  position: relative;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Горизонтальная линия (десктоп/планшет) */
+@media (min-width: 768px) {
+  .steps-process-section__timeline::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 6%;
+    right: 6%;
+    height: 2px;
+    background: var(--gd-bg-light);
+    z-index: 1;
+  }
+}
+
+/* Этап (горизонтальный) */
+.steps-process-section__step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 8px;
+  flex: 1;
+}
+
+.steps-process-section__step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(198, 132, 70, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gd-accent-dark);
+}
+
+.steps-process-section__step-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gd-text);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.steps-process-section__step-text {
+  font-size: 11px;
+  color: var(--gd-text-muted);
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 140px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Планшет: скрываем описания */
+@media (min-width: 768px) and (max-width: 991px) {
+  .steps-process-section__timeline {
+    padding: 40px 24px 24px;
+  }
+  .steps-process-section__timeline::before {
+    top: 68px;
+  }
+  .steps-process-section__step-number {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+  .steps-process-section__step-title {
+    font-size: 11px;
+  }
+  .steps-process-section__step-text {
+    display: none;
+  }
+}
+
+/* Мобильный: вертикальный таймлайн */
+@media (max-width: 767px) {
+  .steps-process-section {
+    padding: 48px 0;
+  }
+  .steps-process-section__title {
+    font-size: 24px;
+  }
+  .steps-process-section__subtitle {
+    font-size: 15px;
+  }
+  .steps-process-section__timeline {
+    flex-direction: column;
+    padding: 32px 24px 32px 72px;
+    border-radius: var(--gd-radius);
+  }
+  .steps-process-section__timeline::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    bottom: 32px;
+    left: 55px;
+    width: 2px;
+    background: var(--gd-bg-light);
+  }
+  .steps-process-section__step {
+    text-align: left;
+    position: relative;
+    padding: 0;
+    margin-bottom: 28px;
+  }
+  .steps-process-section__step:last-child {
+    margin-bottom: 0;
+  }
+  .steps-process-section__step-number {
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    margin: 0;
+  }
+  .steps-process-section__step-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .steps-process-section__step-text {
+    font-size: 13px;
+    max-width: none;
+    -webkit-line-clamp: unset;
+  }
+}
+
+/* Дожим */
+.steps-process-section__push {
+  font-size: 15px;
+  color: var(--gd-text);
+  line-height: 1.6;
+  padding-left: 20px;
+  border-left: 3px solid var(--gd-accent);
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+/* CTA */
+.steps-process-section__cta {
+  text-align: center;
+}
+
+.steps-process-section__btn {
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.steps-process-section__note {
+  font-size: 11px;
+  color: var(--gd-text-muted);
+  margin: 12px 0 0;
 }
 
 /* === ADD CUSTOM STYLES BELOW THIS LINE === */
